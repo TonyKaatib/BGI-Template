@@ -22,6 +22,10 @@ int main(int argc, char** argv){
 	int dy = 3;
 	char exitText[] = "Press any key to exit";
 	
+	setbkcolor(BLACK);
+	setcolor(WHITE);
+	settextjustify(CENTER_TEXT, TOP_TEXT);
+		
 	while (program == 1){
 		if (kbhit()) {
 			program = 0;
@@ -41,14 +45,10 @@ int main(int argc, char** argv){
 		}
 
 		cleardevice();
-		setbkcolor(BLACK);
-		setcolor(WHITE);
-		settextjustify(CENTER_TEXT, TOP_TEXT);
 		rectangle(x, y, x + width, y + height);
 		outtextxy(getmaxx() / 2, getmaxy() / 2, exitText);
 		presentframe(page);
-		
-		delay(16);
+		delay(1);
 	};
 	cleardevice();
 	return 0;
